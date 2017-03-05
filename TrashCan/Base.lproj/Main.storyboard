@@ -11,7 +11,7 @@
         <capability name="documents saved in the Xcode 8 format" minToolsVersion="8.0"/>
     </dependencies>
     <scenes>
-        <!--如此廢材的我-->
+        <!--我的材廢此如-->
         <scene sceneID="tne-QT-ifu">
             <objects>
                 <viewController id="BYZ-38-t0r" customClass="TrashCanViewController" customModule="TrashCan" customModuleProvider="target" sceneMemberID="viewController">
@@ -999,7 +999,7 @@
                                 <nil key="highlightedColor"/>
                             </label>
                             <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="Z4a-vx-BNj">
-                                <rect key="frame" x="307.5" y="360" width="20" height="19"/>
+                                <rect key="frame" x="307.5" y="359.5" width="20" height="19"/>
                                 <constraints>
                                     <constraint firstAttribute="width" constant="20" id="Fhj-bN-t4g"/>
                                     <constraint firstAttribute="height" constant="19" id="ao1-j7-AYt"/>
@@ -1010,7 +1010,7 @@
                                 </connections>
                             </button>
                             <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="GOe-sm-zxT">
-                                <rect key="frame" x="331" y="354" width="30" height="30"/>
+                                <rect key="frame" x="330.5" y="354.5" width="30" height="30"/>
                                 <constraints>
                                     <constraint firstAttribute="height" constant="30" id="PJN-sK-Vwl"/>
                                     <constraint firstAttribute="width" secondItem="GOe-sm-zxT" secondAttribute="height" multiplier="1:1" id="gVf-hR-3gf"/>
@@ -1325,7 +1325,7 @@
                             <constraint firstItem="0EP-Uh-aEN" firstAttribute="width" secondItem="qtk-dN-6mZ" secondAttribute="width" id="zaS-E6-BaQ"/>
                         </constraints>
                     </view>
-                    <navigationItem key="navigationItem" title="如此廢材的我" id="4Rw-fZ-hJ2"/>
+                    <navigationItem key="navigationItem" title="我的材廢此如" id="4Rw-fZ-hJ2"/>
                     <connections>
                         <outlet property="imageView" destination="ZGG-EA-UVx" id="X3V-DX-fBZ"/>
                         <outlet property="l11" destination="vPU-5L-Kgz" id="6Cq-M4-8Wg"/>

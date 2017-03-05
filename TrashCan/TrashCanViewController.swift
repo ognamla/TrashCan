@@ -101,6 +101,26 @@ class TrashCanViewController: UIViewController, UITextFieldDelegate {
         textField.resignFirstResponder()
         upDateButton()
     }
+    func textFieldDidBeginEditing(_ textField: UITextField) {
+        moveTextField(textField: textField, moveDistance: -40, up: true)
+        self.navigationController?.isNavigationBarHidden = true
+    }
+    func textFieldDidEndEditing(_ textField: UITextField) {
+        moveTextField(textField: textField, moveDistance: -40, up: false)
+        self.navigationController?.isNavigationBarHidden = false
+        
+    }
+    func moveTextField(textField: UITextField , moveDistance: Int, up: Bool) {
+        let moveDeulation = 0.3
+        let movement:CGFloat = CGFloat(up ? moveDistance : -moveDistance)
+        
+        UIView.beginAnimations("animateTextField", context: nil )
+        UIView.setAnimationBeginsFromCurrentState(true)
+        UIView.setAnimationDuration(moveDeulation)
+        self.view.frame = self.view.frame.offsetBy(dx: 0, dy: movement)
+        UIView.commitAnimations()
+        
+    }
     func upDateButton() {
         
         if textField.text != nil {
