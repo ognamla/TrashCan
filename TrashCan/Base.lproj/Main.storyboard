@@ -11,7 +11,7 @@
         <capability name="documents saved in the Xcode 8 format" minToolsVersion="8.0"/>
     </dependencies>
     <scenes>
-        <!--我的材廢此如-->
+        <!--Trash Can View Controller-->
         <scene sceneID="tne-QT-ifu">
             <objects>
                 <viewController id="BYZ-38-t0r" customClass="TrashCanViewController" customModule="TrashCan" customModuleProvider="target" sceneMemberID="viewController">
@@ -1337,7 +1337,7 @@
                             <constraint firstItem="0EP-Uh-aEN" firstAttribute="width" secondItem="qtk-dN-6mZ" secondAttribute="width" id="zaS-E6-BaQ"/>
                         </constraints>
                     </view>
-                    <navigationItem key="navigationItem" title="我的材廢此如" id="4Rw-fZ-hJ2"/>
+                    <navigationItem key="navigationItem" id="4Rw-fZ-hJ2"/>
                     <connections>
                         <outlet property="imageView" destination="ZGG-EA-UVx" id="X3V-DX-fBZ"/>
                         <outlet property="l11" destination="vPU-5L-Kgz" id="6Cq-M4-8Wg"/>
