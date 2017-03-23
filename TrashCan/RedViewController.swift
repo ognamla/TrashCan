@@ -9,7 +9,7 @@
 import UIKit
 
 
-class BlackViewController: UIViewController, UITextFieldDelegate, UIImagePickerControllerDelegate, UINavigationControllerDelegate {
+class RedViewController: UIViewController, UITextFieldDelegate, UIImagePickerControllerDelegate, UINavigationControllerDelegate {
     
     override var prefersStatusBarHidden: Bool {
         return true
@@ -194,9 +194,9 @@ class BlackViewController: UIViewController, UITextFieldDelegate, UIImagePickerC
             l85.text = nil; l86.text = nil; l87.text = nil; l88.text = nil
             l91.text = nil; l92.text = nil; l93.text = nil; l94.text = nil
             l95.text = nil; l96.text = nil; l97.text = nil; l98.text = nil
-
             
-      
+            
+            
             switch textNumber {
             case 1...2:
                 l54.text = "\(combinedArray[0])" ;
