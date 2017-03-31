@@ -26,8 +26,6 @@ class BlackViewController: UIViewController, UITextFieldDelegate, UIImagePickerC
     }
     
     
-    
-    
     override func didReceiveMemoryWarning() {
         super.didReceiveMemoryWarning()
         // Dispose of any resources that can be recreated.
@@ -96,12 +94,11 @@ class BlackViewController: UIViewController, UITextFieldDelegate, UIImagePickerC
         self.present(activityViewController, animated: true, completion: nil)
         
     }
+    
     func imagePickerController(_ picker: UIImagePickerController, didFinishPickingMediaWithInfo info: [String : Any]) {
         if let selectImage = info[UIImagePickerControllerOriginalImage] as? UIImage {
             imageView.image = selectImage
             imageView.contentMode = .scaleAspectFill
-            
-            
         }
         dismiss(animated: true, completion: nil)
     }
@@ -144,6 +141,7 @@ class BlackViewController: UIViewController, UITextFieldDelegate, UIImagePickerC
     func textFieldDidBeginEditing(_ textField: UITextField) {
         moveTextField(textField: textField, moveDistance: -40, up: true)
         self.navigationController?.isNavigationBarHidden = true
+        textLabel.text = "還剩下\(72 - (textField.text?.characters.count)!)個字"
         
     }
     func textFieldDidEndEditing(_ textField: UITextField) {
@@ -633,51 +631,6 @@ class BlackViewController: UIViewController, UITextFieldDelegate, UIImagePickerC
         }
         
     }
-    
-    
-    
-    /*
-     // MARK: - Navigation
-     
-     // In a storyboard-based application, you will often want to do a little preparation before navigation
-     override func prepare(for segue: UIStoryboardSegue, sender: Any?) {
-     // Get the new view controller using segue.destinationViewController.
-     // Pass the selected object to the new view controller.
-     }
-     */
-    //        f11.addTarget(self, action: #selector(TrashCanViewController.textFieldChangeEdit), for: .editingChanged)
-    //        f12.addTarget(self, action: #selector(TrashCanViewController.textFieldChangeEdit), for: .editingChanged)
-    //        f13.addTarget(self, action: #selector(TrashCanViewController.textFieldChangeEdit), for: .editingChanged)
-    //        f14.addTarget(self, action: #selector(TrashCanViewController.textFieldChangeEdit), for: .editingChanged)
-    //        f15.addTarget(self, action: #selector(TrashCanViewController.textFieldChangeEdit), for: .editingChanged)
-    //        f16.addTarget(self, action: #selector(TrashCanViewController.textFieldChangeEdit), for: .editingChanged)
-    //        f17.addTarget(self, action: #selector(TrashCanViewController.textFieldChangeEdit), for: .editingChanged)
-    //        f18.addTarget(self, action: #selector(TrashCanViewController.textFieldChangeEdit), for: .editingChanged)
-    
-    //    func textFieldChangeEdit() {
-    //        if f11.text?.characters.count == 10 {
-    //            f12.becomeFirstResponder()
-    //        }
-    //        if f12.text?.characters.count == 1 {
-    //            f13.becomeFirstResponder()
-    //        }
-    //        if f13.text?.characters.count == 1 {
-    //            f14.becomeFirstResponder()
-    //        }
-    //        if f14.text?.characters.count == 1 {
-    //            f15.becomeFirstResponder()
-    //        }
-    //        if f15.text?.characters.count == 1 {
-    //            f16.becomeFirstResponder()
-    //        }
-    //        if f16.text?.characters.count == 1 {
-    //            f17.becomeFirstResponder()
-    //        }
-    //        if f17.text?.characters.count == 1 {
-    //            f18.becomeFirstResponder()
-    //        }
-    //
-    //    }
     
     
 }
