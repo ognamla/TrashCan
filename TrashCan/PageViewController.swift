@@ -17,7 +17,8 @@ class PageViewController: UIPageViewController, UIPageViewControllerDataSource, 
         return[self.viewControllerInstance(name: "Black"),
                self.viewControllerInstance(name: "Green"),
                self.viewControllerInstance(name: "Blue"),
-               self.viewControllerInstance(name: "Red")]
+               self.viewControllerInstance(name: "Red"),
+               self.viewControllerInstance(name: "About")]
     }()
     
     private func viewControllerInstance(name: String) -> UIViewController {

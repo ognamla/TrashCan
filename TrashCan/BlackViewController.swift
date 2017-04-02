@@ -22,19 +22,39 @@ class BlackViewController: UIViewController, UITextFieldDelegate, UIImagePickerC
         textField.clearButtonMode = UITextFieldViewMode.whileEditing
         if textField.text == nil {
             textLabel.text = "還剩下72個字"
+            
+        }
+        imageSaveMessage.isHidden = true
+        imageSaveMessage.alpha = 1
+        imageAlphaSlider.transform = CGAffineTransform.init(rotationAngle: CGFloat(-M_PI_2))
+        if imageView.image == nil {
+            imageAlphaSlider.isHidden = true
         }
     }
-    
+    override func viewDidAppear(_ animated: Bool) {
+        if imageView.image != nil {
+            imageAlphaSlider.isHidden = false
+        }
+    }
     
     override func didReceiveMemoryWarning() {
         super.didReceiveMemoryWarning()
         // Dispose of any resources that can be recreated.
     }
     
+    
+    @IBOutlet weak var imageAlphaSlider: UISlider!
     @IBOutlet var textLabel: UILabel!
     @IBOutlet var textField: UITextField!
     @IBOutlet var imageView: UIImageView!
     @IBOutlet var saveButton: UIButton!
+    @IBOutlet var imageSaveMessage: UILabel!
+    
+    @IBAction func imageAlphaSlider(_ sender: UISlider) {
+        if imageView.image != nil {
+            imageView.alpha = CGFloat(imageAlphaSlider.value)
+        }
+    }
     //save image
     @IBAction func saveButton(_ sender: Any) {
         //animate alpha
@@ -58,6 +78,7 @@ class BlackViewController: UIViewController, UITextFieldDelegate, UIImagePickerC
         UIGraphicsEndImageContext()
         // Save it to the camera roll
         UIImageWriteToSavedPhotosAlbum(imageOfView!, nil, nil, nil)
+        
         
     }
     
@@ -83,9 +104,11 @@ class BlackViewController: UIViewController, UITextFieldDelegate, UIImagePickerC
         let imageOfView = UIGraphicsGetImageFromCurrentImageContext()
         UIGraphicsEndImageContext()
         
+        let description = "#廢物筆記"
+        
         // image to share
         // set up activity view controller
-        let activityViewController = UIActivityViewController(activityItems: [imageOfView!], applicationActivities: nil)
+        let activityViewController = UIActivityViewController(activityItems: [description, imageOfView!], applicationActivities: nil)
         activityViewController.popoverPresentationController?.sourceView = self.view
         // so that iPads won't crash
         
@@ -117,6 +140,7 @@ class BlackViewController: UIViewController, UITextFieldDelegate, UIImagePickerC
     @IBOutlet var clearButton: UIButton!
     @IBAction func clearButton(_ sender: Any) {
         imageView.image = nil
+        imageAlphaSlider.isHidden = true
     }
     
     @IBOutlet var l11: UILabel! ; @IBOutlet var l12: UILabel! ; @IBOutlet var l13: UILabel! ; @IBOutlet var l14: UILabel! ; @IBOutlet var l15: UILabel! ; @IBOutlet var l16: UILabel! ; @IBOutlet var l17: UILabel! ; @IBOutlet var l18: UILabel!
@@ -192,9 +216,9 @@ class BlackViewController: UIViewController, UITextFieldDelegate, UIImagePickerC
             l85.text = nil; l86.text = nil; l87.text = nil; l88.text = nil
             l91.text = nil; l92.text = nil; l93.text = nil; l94.text = nil
             l95.text = nil; l96.text = nil; l97.text = nil; l98.text = nil
-
             
-      
+            
+            
             switch textNumber {
             case 1...2:
                 l54.text = "\(combinedArray[0])" ;

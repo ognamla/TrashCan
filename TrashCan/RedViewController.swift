@@ -23,6 +23,16 @@ class RedViewController: UIViewController, UITextFieldDelegate, UIImagePickerCon
         if textField.text == nil {
             textLabel.text = "還剩下72個字"
         }
+        imageAlphaSlider.transform = CGAffineTransform.init(rotationAngle: CGFloat(-M_PI_2))
+        if imageView.image == nil {
+            imageAlphaSlider.isHidden = true
+        }
+        
+    }
+    override func viewDidAppear(_ animated: Bool) {
+        if imageView.image != nil {
+            imageAlphaSlider.isHidden = false
+        }
     }
     
     
@@ -32,11 +42,17 @@ class RedViewController: UIViewController, UITextFieldDelegate, UIImagePickerCon
         super.didReceiveMemoryWarning()
         // Dispose of any resources that can be recreated.
     }
-    
+    @IBOutlet weak var imageAlphaSlider: UISlider!
     @IBOutlet var textLabel: UILabel!
     @IBOutlet var textField: UITextField!
     @IBOutlet var imageView: UIImageView!
     @IBOutlet var saveButton: UIButton!
+    @IBAction func imageAlphaSlider(_ sender: UISlider) {
+        if imageView.image != nil {
+            imageView.alpha = CGFloat(imageAlphaSlider.value)
+        }
+    }
+    
     //save image
     @IBAction func saveButton(_ sender: Any) {
         //animate alpha
@@ -85,9 +101,12 @@ class RedViewController: UIViewController, UITextFieldDelegate, UIImagePickerCon
         let imageOfView = UIGraphicsGetImageFromCurrentImageContext()
         UIGraphicsEndImageContext()
         
+        let description = "#廢物筆記"
+
+        
         // image to share
         // set up activity view controller
-        let activityViewController = UIActivityViewController(activityItems: [imageOfView!], applicationActivities: nil)
+        let activityViewController = UIActivityViewController(activityItems: [description, imageOfView!], applicationActivities: nil)
         activityViewController.popoverPresentationController?.sourceView = self.view
         // so that iPads won't crash
         
@@ -120,6 +139,7 @@ class RedViewController: UIViewController, UITextFieldDelegate, UIImagePickerCon
     @IBOutlet var clearButton: UIButton!
     @IBAction func clearButton(_ sender: Any) {
         imageView.image = nil
+        imageAlphaSlider.isHidden = true
     }
     
     @IBOutlet var l11: UILabel! ; @IBOutlet var l12: UILabel! ; @IBOutlet var l13: UILabel! ; @IBOutlet var l14: UILabel! ; @IBOutlet var l15: UILabel! ; @IBOutlet var l16: UILabel! ; @IBOutlet var l17: UILabel! ; @IBOutlet var l18: UILabel!
@@ -635,49 +655,6 @@ class RedViewController: UIViewController, UITextFieldDelegate, UIImagePickerCon
     }
     
     
-    
-    /*
-     // MARK: - Navigation
-     
-     // In a storyboard-based application, you will often want to do a little preparation before navigation
-     override func prepare(for segue: UIStoryboardSegue, sender: Any?) {
-     // Get the new view controller using segue.destinationViewController.
-     // Pass the selected object to the new view controller.
-     }
-     */
-    //        f11.addTarget(self, action: #selector(TrashCanViewController.textFieldChangeEdit), for: .editingChanged)
-    //        f12.addTarget(self, action: #selector(TrashCanViewController.textFieldChangeEdit), for: .editingChanged)
-    //        f13.addTarget(self, action: #selector(TrashCanViewController.textFieldChangeEdit), for: .editingChanged)
-    //        f14.addTarget(self, action: #selector(TrashCanViewController.textFieldChangeEdit), for: .editingChanged)
-    //        f15.addTarget(self, action: #selector(TrashCanViewController.textFieldChangeEdit), for: .editingChanged)
-    //        f16.addTarget(self, action: #selector(TrashCanViewController.textFieldChangeEdit), for: .editingChanged)
-    //        f17.addTarget(self, action: #selector(TrashCanViewController.textFieldChangeEdit), for: .editingChanged)
-    //        f18.addTarget(self, action: #selector(TrashCanViewController.textFieldChangeEdit), for: .editingChanged)
-    
-    //    func textFieldChangeEdit() {
-    //        if f11.text?.characters.count == 10 {
-    //            f12.becomeFirstResponder()
-    //        }
-    //        if f12.text?.characters.count == 1 {
-    //            f13.becomeFirstResponder()
-    //        }
-    //        if f13.text?.characters.count == 1 {
-    //            f14.becomeFirstResponder()
-    //        }
-    //        if f14.text?.characters.count == 1 {
-    //            f15.becomeFirstResponder()
-    //        }
-    //        if f15.text?.characters.count == 1 {
-    //            f16.becomeFirstResponder()
-    //        }
-    //        if f16.text?.characters.count == 1 {
-    //            f17.becomeFirstResponder()
-    //        }
-    //        if f17.text?.characters.count == 1 {
-    //            f18.becomeFirstResponder()
-    //        }
-    //
-    //    }
     
     
 }

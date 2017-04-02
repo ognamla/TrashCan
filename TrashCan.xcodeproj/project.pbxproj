@@ -13,10 +13,10 @@
 		3A274D481E82C6ED00A0ED80 /* GreenViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 3A274D471E82C6ED00A0ED80 /* GreenViewController.swift */; };
 		3A274D4A1E82C89C00A0ED80 /* BlueViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 3A274D491E82C89C00A0ED80 /* BlueViewController.swift */; };
 		3A274D4C1E83E3EA00A0ED80 /* RedViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 3A274D4B1E83E3EA00A0ED80 /* RedViewController.swift */; };
+		3A274DA81E8F9A0900A0ED80 /* AboutViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 3A274DA71E8F9A0900A0ED80 /* AboutViewController.swift */; };
 		3A6F7A0F1E65B375004124F5 /* AppDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = 3A6F7A0E1E65B375004124F5 /* AppDelegate.swift */; };
 		3A6F7A161E65B375004124F5 /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = 3A6F7A151E65B375004124F5 /* Assets.xcassets */; };
 		3A6F7A191E65B375004124F5 /* LaunchScreen.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 3A6F7A171E65B375004124F5 /* LaunchScreen.storyboard */; };
-		3A6F7A211E65B559004124F5 /* TrashCanViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 3A6F7A201E65B559004124F5 /* TrashCanViewController.swift */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
@@ -26,12 +26,12 @@
 		3A274D471E82C6ED00A0ED80 /* GreenViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = GreenViewController.swift; sourceTree = "<group>"; };
 		3A274D491E82C89C00A0ED80 /* BlueViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = BlueViewController.swift; sourceTree = "<group>"; };
 		3A274D4B1E83E3EA00A0ED80 /* RedViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = RedViewController.swift; sourceTree = "<group>"; };
+		3A274DA71E8F9A0900A0ED80 /* AboutViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = AboutViewController.swift; sourceTree = "<group>"; };
 		3A6F7A0B1E65B375004124F5 /* TrashCan.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = TrashCan.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		3A6F7A0E1E65B375004124F5 /* AppDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AppDelegate.swift; sourceTree = "<group>"; };
 		3A6F7A151E65B375004124F5 /* Assets.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; path = Assets.xcassets; sourceTree = "<group>"; };
 		3A6F7A181E65B375004124F5 /* Base */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; name = Base; path = Base.lproj/LaunchScreen.storyboard; sourceTree = "<group>"; };
 		3A6F7A1A1E65B375004124F5 /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
-		3A6F7A201E65B559004124F5 /* TrashCanViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = TrashCanViewController.swift; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -66,7 +66,6 @@
 			children = (
 				3A6F7A0E1E65B375004124F5 /* AppDelegate.swift */,
 				3A263D0A1E7D29C700EA791E /* Main.storyboard */,
-				3A6F7A201E65B559004124F5 /* TrashCanViewController.swift */,
 				3A6F7A151E65B375004124F5 /* Assets.xcassets */,
 				3A6F7A171E65B375004124F5 /* LaunchScreen.storyboard */,
 				3A6F7A1A1E65B375004124F5 /* Info.plist */,
@@ -75,6 +74,7 @@
 				3A274D471E82C6ED00A0ED80 /* GreenViewController.swift */,
 				3A274D491E82C89C00A0ED80 /* BlueViewController.swift */,
 				3A274D4B1E83E3EA00A0ED80 /* RedViewController.swift */,
+				3A274DA71E8F9A0900A0ED80 /* AboutViewController.swift */,
 			);
 			path = TrashCan;
 			sourceTree = "<group>";
@@ -111,7 +111,7 @@
 				TargetAttributes = {
 					3A6F7A0A1E65B375004124F5 = {
 						CreatedOnToolsVersion = 8.2.1;
-						DevelopmentTeam = R87SVJYRVB;
+						DevelopmentTeam = YR4WMT9X5T;
 						ProvisioningStyle = Automatic;
 					};
 				};
@@ -155,7 +155,7 @@
 				3A274D4C1E83E3EA00A0ED80 /* RedViewController.swift in Sources */,
 				3A6F7A0F1E65B375004124F5 /* AppDelegate.swift in Sources */,
 				3A263D091E7D12BA00EA791E /* BlackViewController.swift in Sources */,
-				3A6F7A211E65B559004124F5 /* TrashCanViewController.swift in Sources */,
+				3A274DA81E8F9A0900A0ED80 /* AboutViewController.swift in Sources */,
 				3A263D101E7D7BAB00EA791E /* PageViewController.swift in Sources */,
 				3A274D4A1E82C89C00A0ED80 /* BlueViewController.swift in Sources */,
 				3A274D481E82C6ED00A0ED80 /* GreenViewController.swift in Sources */,
@@ -271,10 +271,10 @@
 			isa = XCBuildConfiguration;
 			buildSettings = {
 				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
-				DEVELOPMENT_TEAM = R87SVJYRVB;
+				DEVELOPMENT_TEAM = YR4WMT9X5T;
 				INFOPLIST_FILE = TrashCan/Info.plist;
 				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/Frameworks";
-				PRODUCT_BUNDLE_IDENTIFIER = tw.com.ognam.TrashCan;
+				PRODUCT_BUNDLE_IDENTIFIER = com.ognam.TrashCan;
 				PRODUCT_NAME = "$(TARGET_NAME)";
 				SWIFT_VERSION = 3.0;
 			};
@@ -284,10 +284,10 @@
 			isa = XCBuildConfiguration;
 			buildSettings = {
 				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
-				DEVELOPMENT_TEAM = R87SVJYRVB;
+				DEVELOPMENT_TEAM = YR4WMT9X5T;
 				INFOPLIST_FILE = TrashCan/Info.plist;
 				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/Frameworks";
-				PRODUCT_BUNDLE_IDENTIFIER = tw.com.ognam.TrashCan;
+				PRODUCT_BUNDLE_IDENTIFIER = com.ognam.TrashCan;
 				PRODUCT_NAME = "$(TARGET_NAME)";
 				SWIFT_VERSION = 3.0;
 			};
