@@ -55,27 +55,36 @@ class RedViewController: UIViewController, UITextFieldDelegate, UIImagePickerCon
     
     //save image
     @IBAction func saveButton(_ sender: Any) {
-        //animate alpha
-        saveButton.alpha = 0.5
-        fakeNavigation.center.y = 0
-        clearButton.center.y = 0
-        UIView.animate(withDuration: 1, animations: {
-            self.saveButton.alpha = 1
-            self.fakeNavigation.center.y = -40
-            self.clearButton.center.y = -40
+        let alertController = UIAlertController(title: "儲存圖片", message: "儲存圖片於相本", preferredStyle: .alert)
+        let cancelController = UIAlertAction(title: "取消", style: .cancel, handler: nil)
+        let saveController = UIAlertAction(title: "確認", style: .default, handler: {
+            (action: UIAlertAction!)  in
+            
+            //animate alpha
+            self.saveButton.alpha = 0.5
+            self.fakeNavigation.center.y = 0
+            self.clearButton.center.y = 0
+            UIView.animate(withDuration: 1, animations: {
+                self.saveButton.alpha = 1
+                self.fakeNavigation.center.y = -40
+                self.clearButton.center.y = -40
+            })
+            
+            let rect = CGRect(x: 0, y: 0, width: self.imageView.frame.width, height: self.imageView.frame.height)
+            
+            UIGraphicsBeginImageContextWithOptions(rect.size, true, 0)
+            //view.drawHierarchy(in: rect, afterScreenUpdates: false)
+            self.view.layer.render(in: UIGraphicsGetCurrentContext()!)
+            //self.view.drawHierarchy(in: view.bounds, afterScreenUpdates: true)
+            
+            let imageOfView = UIGraphicsGetImageFromCurrentImageContext()
+            UIGraphicsEndImageContext()
+            // Save it to the camera roll
+            UIImageWriteToSavedPhotosAlbum(imageOfView!, nil, nil, nil)
         })
-        
-        let rect = CGRect(x: 0, y: 0, width: imageView.frame.width, height: imageView.frame.height)
-        
-        UIGraphicsBeginImageContextWithOptions(rect.size, true, 0)
-        //view.drawHierarchy(in: rect, afterScreenUpdates: false)
-        view.layer.render(in: UIGraphicsGetCurrentContext()!)
-        //self.view.drawHierarchy(in: view.bounds, afterScreenUpdates: true)
-        
-        let imageOfView = UIGraphicsGetImageFromCurrentImageContext()
-        UIGraphicsEndImageContext()
-        // Save it to the camera roll
-        UIImageWriteToSavedPhotosAlbum(imageOfView!, nil, nil, nil)
+        alertController.addAction(cancelController)
+        alertController.addAction(saveController)
+        self.present(alertController, animated: true, completion: nil)
         
     }
     
@@ -118,6 +127,7 @@ class RedViewController: UIViewController, UITextFieldDelegate, UIImagePickerCon
     func imagePickerController(_ picker: UIImagePickerController, didFinishPickingMediaWithInfo info: [String : Any]) {
         if let selectImage = info[UIImagePickerControllerOriginalImage] as? UIImage {
             imageView.image = selectImage
+            imageView.alpha = 0.5
             imageView.contentMode = .scaleAspectFill
             
             
@@ -138,8 +148,18 @@ class RedViewController: UIViewController, UITextFieldDelegate, UIImagePickerCon
     }
     @IBOutlet var clearButton: UIButton!
     @IBAction func clearButton(_ sender: Any) {
-        imageView.image = nil
-        imageAlphaSlider.isHidden = true
+        let alertController = UIAlertController(title: "清除照片", message: "確認清除照片？", preferredStyle: .alert)
+        let cancelController = UIAlertAction(title: "取消", style: .cancel, handler: nil)
+        let checkController = UIAlertAction(title: "確認", style: .default, handler: {
+            (action: UIAlertAction!)  in
+            
+            self.imageView.image = nil
+            self.imageAlphaSlider.isHidden = true
+        })
+        alertController.addAction(cancelController)
+        alertController.addAction(checkController)
+        self.present(alertController, animated: true, completion: nil)
+        
     }
     
     @IBOutlet var l11: UILabel! ; @IBOutlet var l12: UILabel! ; @IBOutlet var l13: UILabel! ; @IBOutlet var l14: UILabel! ; @IBOutlet var l15: UILabel! ; @IBOutlet var l16: UILabel! ; @IBOutlet var l17: UILabel! ; @IBOutlet var l18: UILabel!
